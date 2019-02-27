@@ -8,10 +8,26 @@
   src="https://code.jquery.com/jquery-3.3.1.js"></script>
   <script>
     $(function(){
-      
+      $('button').click(function(){
+        // get the inputs from the user
+        
+        $('botton').click(function(){
+          var title = $('#title').val();
+          var genre = $('#genre').val();
+          var character1 = $('#character1').val();
+          var character2 = $('#character2').val();
+          var character3 = $('#character3').val();
+        });
+      });
     });
   </script>
   <body>
-  
+    Title: <input id="title"><br>
+    Genre: <input id="genre"><br>
+    Character1: <input id="character1"><br>
+    Character2: <input id="character2"><br>
+    Character3: <input id="charcater3"><br>
+    
+    <botton>Generate Comic</botton>
   </body>
 </html>
