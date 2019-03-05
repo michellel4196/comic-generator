@@ -11,9 +11,11 @@
     #font1 {
       font-family: 'Shadows Into Light', cursive;
     }
+
     #font2 {
       font-family: 'Comfortaa', cursive;
     }
+
     #font3 {
       font-family: 'Satisfy', cursive;
     }
@@ -21,40 +23,43 @@
 </head>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script>
-  $(function() {
-    $('button').click(function() {
-      // get the inputs from the user
+  var genres = ["horror", "comedy", "romance", "action"]
 
-      $('botton').click(function() {
-        var title = $('#title').val();
-        var genre = $('#genre').val();
-        var character1 = $('#character1').val();
-        var character2 = $('#character2').val();
-        var character3 = $('#character3').val();
-      });
+  $(function() {
+    // get the inputs from the user
+
+    //when button is clicked
+    $('button').click(function() {
+      var title = $('#title').val();
+      var font = $('#font input[type="radio"][name="font"]:checked').val();
+      var character1 = $('#character1').val();
+      var character2 = $('#character2').val();
+
+      var quote1 = "A B-, YES! Hey what'd you get " + character1 + " I got a B " + character2 + " Hey, look what I got! Stupid B-";
+
+      $('p').html(quote1);
+      $('p').css('font-family', font);
     });
-    
-    //images for scenes depends on the genre
-    //make comic appear on the screen
-    
-    
+
+
+
   });
+
+  //images for scenes depends on the genre
+  //make comic appear on the screen
 </script>
 
 <body>
-  Title: <input id="title"><br> 
-  Genre: <input type='radio' name='genre' value='horror' id="genre">Horror
-         <input type='radio' name='genre' value='comedy' id="genre">Comedy
-         <input type='radio' name='genre' value='romance' id="genre">Romance
-         <input type='radio' name='genre' value='action' id="genre">Action<br> 
-  Font: <input type='radio' name='font' value='font1' id="font"><text id="font1">Shadow into light</text>
-        <input type='radio' name='font' value='font2' id="font"><text id="font2">Comfortaa</text>
-        <input type='radio' name='font' value='font3' id="font"><text id="font3">Satisfy</text><br>
-  Character1: <input id="character1"><br> 
-  Character2: <input id="character2"><br> 
-  Character3: <input id="charcater3"><br>
+
+  Title: <input id="title"><br> Font: <input type='radio' name='font' value='font1' id="font"><text id="font1">Shadow into light</text>
+  <input type='radio' name='font' value='font2' id="font"><text id="font2">Comfortaa</text>
+  <input type='radio' name='font' value='font3' id="font"><text id="font3">Satisfy</text><br> Character1 Name: <input id="character1"><br> Character2 Name: <input id="character2"><br>
 
   <button>Generate Comic</button>
+
+
+  <p></p>
+
 </body>
 
 </html>
